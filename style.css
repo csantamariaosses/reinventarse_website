@@ -1,0 +1,279 @@
+/*
+Theme Name: twentytwentyone-child
+Theme URI: http://loquesea.es
+Version: 4.0
+Description: Tema hijo de A theme
+Author: csanta
+Author URI: http://loquesea.es
+Template: twentytwentyone
+*/
+ 
+/*----------------- Cambios a partir de aquí -------------------------------*/
+
+/*
+body{
+    height: 145vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.4),transparent),url(img01.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+header{
+    height: auto;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    height: 100px;
+    transition: 0.2s;
+    background: olive;
+}
+
+.logo{
+    height: 60%;
+}
+
+.main-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+
+
+.menu-item{
+    margin:0 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #cf1d1d;
+}
+
+.cta{
+    padding: 10px 24px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    color: #f2f2f2;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cta:hover{
+    color: #f2f2f2;
+    background-color: #04548a;
+}
+
+.menu-item:hover{
+    color: var(--main-color);
+}
+
+*/
+
+body{
+    background-color: white!important;
+}
+.queHacemos{
+    padding-top: 10px;
+    background-color: white;
+    height: 200px;
+}
+
+.casosDeExitoPpal {
+    background-color: #282626;
+    height: 400px;
+    position:relative;
+}
+
+
+.divTituloCasosExito {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 30%;
+   width: 50%;
+   margin: -15% 0 0 -25%;
+}
+
+.contenedorCasosExito {
+    max-width: 500px;
+    width:90%;
+    margin:auto;
+    background-color:#282626;
+}
+
+
+.tituloCasosDeExito {
+    margin-top: 200px;
+    color:white;
+}
+
+.slideShowCasosExito {
+    margin-top: 45px;
+    background-color:#282626;
+}
+
+
+.slideCasoExito{
+    background-color:#282626;
+}
+
+
+
+
+.slideCasoExito {
+    height: 30px;
+    background-color:#282626;
+
+}
+
+
+.contenedor-laminas-casos-exito {
+    max-width: 1200px;
+    
+    width:60%;
+    padding-top: 30px;
+    margin:auto;
+    background-color:#282626;
+}
+
+.lamina-casos-exito {
+    margin-top: 40px;
+    background-color: brown;
+    height: 200px!important;
+    color:white;
+}
+
+
+.nuestrosProgramas {
+    padding-top: 10px;
+    background-color: white;
+    height: 200px;
+}
+
+.tituloNuestrosProgramas {
+   /* H2/BOLD */
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 32px;
+   line-height: 52px;
+   /* identical to box height, or 162% */
+   color: #282626;
+
+}
+
+.contenedor-img-programas {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.centrado{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+
+.centradoVerical{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+
+
+
+.imgProgramas {
+   color:black;
+}
+
+
+.btnVerTodosLosProgramas {
+    width: 200px;
+    background-color:#EA672A!important;
+}
+
+
+
+.footer_csanta {
+    height: 240px; 
+    background-color:#EA672A;
+}
+
+.btnDonar {
+    font-family:Roboto;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.textoFooter {
+    font-size: 18px;
+    color:#F1F1F1;
+}
+
+.textoFooterDireccion {
+    font-size: 12px;
+    color:#F1F1F1;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+
+.alianzas {
+    background-color: black;
+    height: 340px;
+}
+
+.contenedorAlianzas {
+    max-width: 1200px;
+    width:90%;
+    margin:auto;
+    background-color: black;
+}
+
+.tituloNuestrasAlianzas{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 52px;
+    color:white;
+}
+
+.contenedor-laminas {
+    max-width: 1200px;
+    width:90%;
+    padding-top: 30px;
+    margin:auto;
+    background-color: black;
+}
+
+.slide1 {
+    background-color: black;
+}
+
+.slide2 {
+    background-color: black;
+}
+
+.slide3 {
+    background-color: black;
+}
+
+.slide4 {
+    background-color: black;
+}
