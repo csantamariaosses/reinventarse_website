@@ -1,0 +1,1057 @@
+/*
+Theme Name: testmegamenu
+Theme URI: http://loquesea.es
+Version: 4.0
+Description: Tema prueba menus
+Author: csanta
+Author URI: http://loquesea.es
+*/
+ 
+/*----------------- Cambios a partir de aquí -------------------------------*/
+
+body{
+    /*background-color: white!important; */
+    background-color: rgb(218, 200, 200);
+}
+
+
+.logoMenu {
+    padding-top: 30px;
+    height: 300px;
+}
+
+
+.barraInferiorMenu{
+    margin-top: 10px;
+    color: #f00; 
+    background-color: #f00; 
+    height: 3px;
+}
+
+.queHacemos{
+    padding-top: 10px;
+    background-color: white;
+    height: 250px;
+}
+
+
+
+@media (max-width: 600px) {
+    .casosDeExitoPpal {
+        /*background-color: #282626;*/
+        background-color: blue;
+        height: 500px;
+        position:relative;
+    }
+
+    .casosDeExitoPpal .tituloCasosDeExito{
+        background-color: #f00;
+    }        
+
+    .alianzasMovilPpal {
+        background-color: #282626;
+        height: 500px;
+        position:relative;
+    }
+}
+
+
+
+
+
+.divTituloCasosExito {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 30%;
+   width: 50%;
+   margin: -15% 0 0 -25%;
+}
+
+
+
+
+.flexbox {
+    align-items: center;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    /*width: 200px;*/
+
+    /*background: #282626; */
+    background-color: deeppink;
+    color:white;
+}
+
+
+@media (max-width: 600px) {
+    .flexbox {
+        background-color:#282626;
+        height: 150px;
+        position:relative;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+   .nuestrosProgramas {
+        padding-top: 10px;
+        background-color: white;
+        height: 900px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .nuestrosProgramas {
+         padding-top: 10px;
+         background-color: white;
+         height: 550px;
+     }
+ }
+
+
+
+ /* PROGRAMAS */
+ .lamina-programa {
+    padding-top: 20px;
+    padding-right: 20px;
+ }
+
+.tituloNuestrosProgramas {
+   /* H2/BOLD */
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 32px;
+   line-height: 52px;
+   /* identical to box height, or 162% */
+   color: #282626;
+
+}
+
+
+
+
+.lamina-programa {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.centrado{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+
+.centradoVerical{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+
+
+
+
+.btnVerTodosLosProgramas {
+    width: 200px;
+    background-color:#EA672A!important;
+}
+
+
+
+
+/*************************************/
+/*background-color:#282626; */
+/* ajustes para desktop*/
+@media (max-width: 1300px) {
+
+    .logoMenu {
+        background-color: darkgray;
+        height: 100px;
+    }
+
+
+    .queHacemosDesk {
+        margin-top: 0px;
+        background-color: #95d64a;
+        padding-top: 20px;
+        display:block;
+        height: 200px;
+    }
+
+    .casosDeExitoTituloMovil {
+        display:none!important;
+    }
+
+    .casosDeExitoContenedorMovil{
+        display:none!important;
+    }
+
+    .casosDeExitoPpal {
+        /*background-color: #f4f80e; //para test */
+        background-color:#282626; 
+        height: 350px;
+        position:relative;    
+    }
+
+    .casosDeExitoPpal .tituloCasosDeExito{
+        /*background-color: #f00; para test */
+        background-color:#282626; 
+        font-size: 30px;
+        color:white;
+    }   
+
+    .divTituloCasosDeExito {
+        /*background-color:palevioletred; para test */
+        background-color:#282626; 
+
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+        height: 90%;
+    }
+
+    .contenedorCasosExito {
+        height: 300px;
+        max-width: 600px;
+        width:70%;
+        margin:auto;
+        background-color:#282626;
+        /*background-color: chartreuse!important; para test */
+    }
+
+    .slideShowCasosExito {
+        margin-top: 25px;
+        height: auto;        
+        background-color:#282626;
+        /*background-color: darkgoldenrod; para test */
+    }
+
+    .slideCasoExito{
+        margin-top: 30px;
+        height: 300px;
+        width: 80%;
+        background-color:#282626;
+        /*background-color: indigo; para test */
+    }
+    
+    .contenedor-laminas-casos-exito {
+        max-width: 1200px;        
+        width:80%;
+        margin:auto;
+        background-color:#282626;
+        /*background-color: orangered; para test */
+    }
+    
+    .laminaCasoDeExito {
+        width:90%;
+        height: 300px;
+        margin-left: 15px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .queHacemosMovil {
+        display: none!important;
+    }
+
+    .divBtnVer {
+        text-align: right;
+    }
+
+
+    /*  alianzas */
+    .alianzasContenedorMovil {
+        display:none!important;
+    }
+
+    .tituloAlianzasDesk {
+        display: block!important;
+        color:white;
+        padding-top: 20px;
+    }
+
+    .spanTituloAlianzasDesk {
+        font-size: 25px;
+    }
+
+
+
+
+    .contenedorAlianzasDesk {
+        /*background-color:coral;*/
+        width: 70%;
+        margin-left: 150px;
+    }
+
+    .slide1 {
+        background-color:#282626;
+        width:60%;
+        text-align: center;
+    }
+
+    .contenedor-laminas {
+        max-width: 1200px;
+        width:90%;
+        padding-top: 30px;
+        margin:auto;
+        text-align: center;
+        background-color:#282626;
+    }
+
+    .slideShow {
+        background-color:#282626;
+        text-align: center;
+    }
+    
+    .imgAlianza {
+        width:90%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    .alianzasMovil {
+        display:none!important;
+    }
+
+    .slideShow {
+        background-color:#282626;
+    }
+    
+
+    .tituloAlianzasMovil {
+        display:none!important;
+    }
+    
+    .divTituloAlianzasMovil{
+        display:none!important;
+    }
+
+    .divImgAlianzasMovil {
+        display: none !important;;
+    }
+
+    .tituloContactaConNosotros {
+
+        Font-family:Arial;
+        Font-style: Bold;
+        Font-size: 32px;
+        text-align: Left;
+        vertical-align: Top;
+    }
+
+
+
+    .counter_1, .counter_2, .counter_3 {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .invitacion {
+        padding-top: 10px;
+        background-color:#282626;     
+        height:150px;
+    }
+    .invitacion p {
+        margin-top: 20px;
+        color:white;        
+    }
+
+
+    /* Estadisticas  */
+    .estadisticasDesk {
+        padding-top: 20px;
+        background-color:#EA672A!important;
+        color:white;
+        height:150px;
+    }
+
+    .estadisticasDesk .cifra {
+        color:white;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .estadisticasMovil {
+        display:none!important;        
+    }
+
+    .menuHeaderMovil {
+        display: none!important;
+    }
+    
+
+    
+}
+
+
+/*  ajustes para moviles*/
+@media (max-width: 600px) {
+
+    .queHacemosDesk {
+        display: none!important;
+    }
+
+    .queHacemosMovil {
+        padding-top: 10px;
+        display: block!important;
+        background-color: #95d64a;
+        height: 310px;
+
+    }
+
+    .imgQueHacemosMovil {
+        margin-top: 20px;
+    }
+
+    .glosaQuehacemosMovil {
+        margin-left: 20px;
+        margin-right: 20px;
+        color:#282626;
+    }
+
+    .tituloQueHacemos{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+
+    /* Casos de exito */
+    .casosDeExitoPpal {
+        display:none!important;
+        margin-top: 20px;
+    }
+
+    .casosDeExitoTituloMovil {
+        display:block!important;
+        text-align: center;
+        background-color: #282626;
+        color:white;
+        font-weight: bold;
+        font-size: 20px;
+        padding-top: 5px;
+    }
+
+    .casosDeExitoContenedorMovil {
+        display:block!important;
+        height: 440px;
+        text-align: center;
+        background-color:#282626; 
+        /*background-color: red;*/
+    }
+
+
+    .alianzasContenedorMovil {
+        display:block!important;
+        height: 440px;
+        text-align: center;
+        background-color:#282626; 
+        /*background-color: red;*/
+    }
+
+
+    .slideShowCasosExitoMovil {
+        padding-top: 40px;
+        width:80%;
+        margin: auto;;
+    }
+    
+
+    .contenedorCasosExito {
+        height: 300px;
+        /*max-width: 600px;*/
+        width:90%;
+        margin:auto;
+        /*background-color:#282626;*/
+        background-color: chartreuse!important;
+    }
+
+
+    .divBtnVer {
+        text-align: center;
+    }
+
+    .alianzasDesk {
+        display:none!important;
+    }
+    .tituloAlianzasDesk {
+        display: none!important; 
+    }
+    .contenedorAlianzasDesk {
+        display:none;
+    }
+
+    
+    .divTituloAlianzasMovil {
+        display:block!important;
+    }
+
+
+    .tituloAlianzasMovil {
+        height: 30px;
+        padding-top: 20px;
+        display: block!important;
+        font-size: 20px;
+        font-weight: bold;
+        color:white;
+        background-color: #282626;
+    }
+
+
+    .divImgAlianzasMovil {
+        display: block !important;;
+    }
+
+    .spanTituloAlianzasMovil {
+        color: white !important;;
+    }
+
+    .alianzasMovil {
+        display:block!important;
+        /*background-color: chartreuse;*/
+        background-color:#282626;
+        height: 480px;
+    }
+
+
+    .contenedorSlideAlianzasMovil   {
+        margin-top: 20px;
+        /*background-color: green;*/
+        background-color:#282626;
+        width:100%;
+        
+      
+    }
+
+    .slideAlianzaMovil{
+        /*background-color: brown; */
+        background-color:#282626;
+        margin-top: 10px;
+        margin-left: 0px;
+        /*width:40%;*/
+     }
+
+     .slideShowAlianzas {
+         margin-left: 0px;
+         width:90%;
+         
+     }
+
+
+
+
+     .tituloContactaConNosotros {
+
+        Font-family:Arial;
+        Font-style: Bold;
+        Font-size: 20px;
+        text-align: Left;
+        vertical-align: Top;
+    }
+
+    /*
+    #your-name {
+        width: 100%;
+    }
+
+    #your-email {
+        width: 100%;
+    }
+    #your-message {
+        margin-top: 20px;
+        height: 20px;
+    }
+*/
+
+
+    /* Estadisticas */
+    .estadisticasDesk {
+        display:none!important;        
+    }
+
+    .estadisticasMovil {
+        display:block!important;  
+        background-color: #EA672A!important;   
+        height: 130px;   
+    }
+
+    .estadisticasMovil .cifra {
+        font-weight: bold;
+        color:white;
+        font-size: 30px;
+    }
+
+    .estadisticasMovil .glosa {
+        color:white;
+        font-size: 15px;
+    }
+    /* fin estadisticas */
+
+
+
+    /*
+    .menuHeaderMovil {
+        display: block!important;
+    }
+
+    .nav_header_wp_movil li {
+        text-decoration: none;
+
+    }
+
+    .menuHeader {
+        display:none!important;
+    }
+
+
+    .button-menu {
+        z-index: 200;
+        width: 40px;
+        height: 40px;
+        border: none;
+        display: flex;
+        background: none;
+        flex-direction: column; 
+        align-items: right;
+        justify-content: right;
+        cursor: pointer;
+        margin-left: 120px;
+      }
+      */
+      /* 
+        Dibujamos una línea recta por cada span creando el tipico menu hamburguesa
+      */
+      /*
+      .button-menu span {
+        width: 37px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #444444;
+        color:darkred;
+        border-radius: 10px;
+        /*transform-origin: 4px 0px;
+        transition: all 0.2s linear;
+
+      }
+      */
+      /* 
+        con los span dibujamos un icono de cerrar 
+        para mostrar cuándo la navegación este abierta 
+      */
+      
+      /*
+      .button-menu.close span {
+        opacity: 1;
+        transform: rotate(45deg) translate(0px, 0px);
+        background: #ffffff;
+      }
+      
+      .button-menu.close span:nth-child(2) {
+        transform: rotate(-45deg) translate(-8px, 5px);
+      }
+      
+      .button-menu.close span:nth-child(3) {
+        display: none;
+      }
+
+
+
+      .nav-links {
+        margin-top: 50px;
+        background-color: rgb(250, 250, 250);
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 50%;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .link-item {
+        margin-top: 10px;
+        color: #444444;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+      }
+
+      .tituloMenu {
+
+        align-items: right;
+        color:black;
+        font-size: 18px;
+        margin-left: 130px;
+       /* background-color: darkslategrey;
+      }
+
+      .nav_header_wp_movil li {
+        list-style: none;
+     }
+
+*/
+    
+}
+
+
+
+/*  FORMULARIO DE CONTACTO */
+
+.wpcf7-form {
+    /*background-color: #ffffff; */
+    padding-top: 10px;
+    background-color: rgb(132, 0, 255);
+}
+
+.wpcf7-form .wpcf7-text {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border-color:#EA672A;
+    width:100%;
+}
+
+.wpcf7-form .wpcf7-textarea {
+    border-color:#EA672A;
+    border-radius: 20px;
+    height: 80px;
+    width:100%;
+}
+
+.divBotonSubmit {
+    text-align: right;
+}
+
+.wpcf7-form .wpcf7-submit {
+    background-color: #EA672A!important;
+    border-radius: 20px;
+    color:black!important;
+    padding:8px;
+}
+
+/* Fin Formulario */
+
+
+/* FOOTER */
+@media (max-width: 1300px) {
+    .footer_csanta {
+        height: 300px; 
+        background-color:#EA672A;
+        color:white;
+    }
+
+    .nav-footer ul {
+        text-align: left!important;
+        background-color: darkgreen;
+        list-style: none;
+        padding-left: 0px;
+    }
+    
+    .nav-footer ul li {
+        /*background-color: rgb(18, 20, 175);*/
+        background-color:#EA672A;
+    }
+
+    .nav-footer ul li a {
+        color:white;
+        text-align: left!important;
+        margin-left: 0px!important;
+    }
+
+    .menuFooter {
+        /*background-color: #f00;*/
+        background-color:#EA672A;
+    }
+
+    .menuFooter .btnDonar {
+        margin-top: 20px;
+        color:red;
+    }
+
+
+
+}
+
+@media (max-width: 600px) {
+
+    .footer_csanta {
+        height: 550px;  
+        background-color:#EA672A;
+    }
+    
+    .btnDonar {
+        font-family:Roboto;
+        border-radius: 50%;
+    }
+    
+    .textoFooter {
+        font-size: 18px;
+        color:#F1F1F1;
+    }
+    
+    .textoFooterDireccion {
+        font-size: 12px;
+        color:#F1F1F1;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .menuFooter {
+        text-align: left;
+        margin-left: 0;
+        /*background-color: crimson;*/
+        background-color:#EA672A;
+    }
+
+    .menuFooter button {
+        margin-top: 10px;
+    }
+    
+    /*
+    .nav-footer {
+        background-color: chartreuse;
+        margin-left: 0px;
+        text-align: left;
+    }
+    
+    .nav-footer ul {
+        text-align: left!important;
+        background-color: darkgreen;
+        list-style: none;
+        padding-left: 0px;
+    }
+    
+    .nav-footer ul li {
+      
+        background-color:#EA672A;
+    }
+
+    .nav-footer ul li a {
+        color:white;
+        text-align: left!important;
+        margin-left: 0px!important;
+    }
+*/
+
+}
+
+
+/* FIN FOOTER */
+
+
+
+
+/* Colores */
+.color-fondo-verde {
+    background-color: green;
+}
+.green {
+    background-color: green;
+}
+
+.fondo-oscuro {
+    background-color: #282626;
+}
+
+.fondoRojo {
+    background-color:red;
+}
+
+/* Fin Colores */
+
+
+
+/*
+.imgAlianzasMovil {
+    
+    background-color:#282626;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contenedorImgAlianzaMovil{
+    margin-left: 5px;
+    padding-left: 8px;
+    background-color:#282626;
+}
+
+
+
+.divBtnEnviar {
+    text-align: right;
+}
+
+#btnEnviar {
+    background-color:#EA672A;
+}
+
+
+
+*/
+/* Menu Desk */
+/*
+.nav_header_wp {
+    float: center;
+    
+}
+
+.nav_header_wp li {
+    display: inline-block;
+    padding-left: 10px;
+
+}
+
+
+.nav_header_wp li a {
+    font-size: 15px;;
+    color:black;
+}
+*/
+/* Menu Desk */
+
+
+
+/* boton hamburguersa */
+/*
+.button-menu {
+    background-color: burlywood!important;
+}
+
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .main-nav.show {
+    margin-left: 0;
+  }
+
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 20;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+  }
+  
+  .main-nav.show {
+    margin-left: 20px;
+  }
+  
+  .link-item {
+    margin-top: 2rem;
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .link-item::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  }
+  
+  .link-item:hover::after {
+    width: 100%;
+  }
+  
+  .button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #444444;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #ffffff;
+  }
+  
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+  */
+
+.menu ul {
+    
+    list-style-type: none;
+    text-align: right;
+    background-color: white;
+}
+
+.menu li {
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+.tituloUltimasNoticiaDesk {
+    display: flex;
+    align-items: center;
+}
+
+.flechaSgteUltimasNoticias {
+    display: flex;
+    align-items: center;
+}
