@@ -1,7 +1,9 @@
 <?php get_header();?>
 <?php global $PATH_PAGES;?>
+<?php global $PATH_IMAGES;?>
 <?php global $arrNoticias;?>
 <?php //echo $PATH_PAGES;?>
+
 <div class="container-fluid">
 
     <div class="row mt-4 queHacemosDesk">
@@ -157,21 +159,21 @@
     <div class="row">
         <div class="col-sm-4 text-center lamina-programa">
             <div>                                        
-                <img src="<?php echo $PATH_IMAGES."/Rectangle_10.png";?>"  height="250px" width="300px">
+                <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_01.png";?>"  height="250px" width="300px">
                 <div class="centrado">Programa integral de habilitación laboral</div>
             </div>
         </div>
         <div class="col-sm-4 text-center lamina-programa">
             <div>                    
                 
-                <img src="<?php echo $PATH_IMAGES."/Rectangle_11.png";?>"  height="250px" width="300px">
+                <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_02.png";?>"  height="250px" width="300px">
                 <div class="centrado">Programa de intermediación laboral</div>
             </div>
         </div>
         <div class="col-sm-4 text-center lamina-programa">
             <div>
                 
-                <img src="<?php echo $PATH_IMAGES."/Rectangle_10.png";?>"  height="250px" width="300px">
+                <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_01.png";?>"  height="250px" width="300px">
                 <div class="centrado">Programa integral de habilitación laboral</div>
             </div>                    
         </div>
@@ -194,42 +196,42 @@
                     <div class="slideShow">
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_116.png";?>" width="200px" class="imgAlianza">    
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_01.png";?>" width="200px" class="imgAlianza">    
                             </div>
                         </div>                        
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_117.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_02.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_118.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_03.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_119.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_04.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>  
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_120.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_05.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>                      
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_121.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_06.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>                      
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_122.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_07.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>  
                         <div class="slide slide1">
                             <div class="contenedor-laminas">
-                                <img src="<?php echo $PATH_IMAGES."/Group_123.png";?>" width="200px" class="imgAlianza">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_08.png";?>" width="200px" class="imgAlianza">
                             </div>
                         </div>                                
                     </div>
@@ -280,14 +282,18 @@
         <?php
 
         getLatestPosts();
+       
          //echo "<br>".$arrNoticias[0]->title;
          //echo "<br>".$arrNoticias[0]->src;
          
         ?>
+        <br><br>
 <?php //if ( function_exists( 'wpsp_display' ) ) wpsp_display( 102 ); ?>
-<?php //echo do_shortcode("[post_grid id='104']"); ?>
-
-
+xxxx
+<?php //echo do_shortcode( '[smart_post_show id="122"]' ); ?> 
+<?php if ( function_exists( 'wpsp_display' ) ) wpsp_display( 141 ); ?>
+xxxx
+<?php echo do_shortcode('[shortcodeTituloNoticias]'); ?>
 
 
 </div>

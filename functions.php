@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'testmegamenu_enqueue_script' );
 global $PATH_IMAGES;
 global $PATH_PAGES;
 global $arrNoticias;
-$PATH_IMAGES = '\\wordpress\\wp-content\\uploads\\2022\\01';
+$PATH_IMAGES = '\\wordpress\\wp-content\\uploads\\';
 $PATH_PAGES = "\\wordpress";
 function myglobalvar() {
     global $PATH_IMAGES;
@@ -37,6 +37,7 @@ class Noticia {
     public $posttitle;
     public $src;
     public $fileName;
+    public $fecha;
 };
 
 function getLatestPosts(){
@@ -47,12 +48,13 @@ function getLatestPosts(){
     global $arrNoticias;
 
     //echo "wpdb:".$wpdb;
-    $result = $wpdb->get_results("select ID,post_title, post_content  from wp_posts where post_status = 'publish'  and post_title like '%Noticia%' order by 'post_date' desc limit 3");
+    $result = $wpdb->get_results("select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit 3");
     $cont = -1;
     foreach ($result as $topfive) {
         $postid = $topfive->ID;
         $posttitle = $topfive->post_title;
         $content = $topfive->post_content;
+        $fecha   = $topfive->post_date;
         $imagen_ini = strpos( $content, '<img');
         $imagen_fin = strpos( $content, '/>');
         $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini +2 );
@@ -72,30 +74,36 @@ function getLatestPosts(){
         $cont++;
         $arrNoticias[$cont] =  new Noticia();
         $arrNoticias[$cont]->title = $posttitle;
+        $arrNoticias[$cont]->fecha = $fecha;
         $arrNoticias[$cont]->src = $src;
         
     }
 
-    echo "   <div class='row'>";
+    echo "   <div class='row' id='noticias'>";
     echo "      <div class='col-2 tituloUltimasNoticiaDesk'>";
     echo "             <div>Ultimas <br>Noticias</div>";
     echo "      </div>";
     echo "      <div class='col-6'>";
     echo "          <img ".$arrNoticias[0]->src." width='400'>";
     echo "          <div><span style='color:red;'>".$arrNoticias[0]->title."</span></div>";
+    echo "          <div><span style='color:red;'>".$arrNoticias[0]->fecha."</span></div>";
     echo "      </div><br>";
     echo "      <div class='col-3'>";
     echo "          <div class='row'>";
     echo "               <div class='col-12'>";
     echo "                   <img ".$arrNoticias[1]->src." width='200' >";
+    echo "                   <div><span style='color:red;'>".$arrNoticias[1]->title."</span></div>";
+    echo "                   <div><span style='color:red;'>".$arrNoticias[1]->fecha."</span></div>";    
     echo "               </div>";
     echo "               <div class='col-12'>";
     echo "                   <img ".$arrNoticias[2]->src." width='200' style='margin-top:20px'>";
+    echo "                   <div><span style='color:red;'>".$arrNoticias[2]->title."</span></div>";
+    echo "                   <div><span style='color:red;'>".$arrNoticias[2]->fecha."</span></div>";        
     echo "               </div>";    
     echo "          </div>";
     echo "      </div>";
     echo "      <div class='col-1 flechaSgteUltimasNoticias'>";
-    echo "             <div><a href='#'>></a></div>";
+    echo "             <div><button>Siguiente</button></div>";
     echo "      </div>";
     echo "   </div>";
     echo "<br>";

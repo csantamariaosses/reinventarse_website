@@ -1,5 +1,5 @@
 /*
-Theme Name: testmegamenu
+Theme Name: reinventarse
 Theme URI: http://loquesea.es
 Version: 4.0
 Description: Tema prueba menus
@@ -20,12 +20,20 @@ body{
     height: 300px;
 }
 
+.mega-menu-wrap {
+    background-color:white!important;
+    
+}
+
+.mega-menu-wrap .mega-menu-link {
+    color:black!important;
+}
+
 
 .barraInferiorMenu{
     margin-top: 10px;
-    color: #f00; 
-    background-color: #f00; 
-    height: 3px;
+    background-color:rgb(245, 113, 6)!important;
+    height:8px!important;
 }
 
 .queHacemos{
@@ -38,14 +46,14 @@ body{
 
 @media (max-width: 600px) {
     .casosDeExitoPpal {
-        /*background-color: #282626;*/
-        background-color: blue;
+        background-color: #282626;
+        /*background-color: blue;*/
         height: 500px;
         position:relative;
     }
 
     .casosDeExitoPpal .tituloCasosDeExito{
-        background-color: #f00;
+        /*background-color: #f00;*/
     }        
 
     .alianzasMovilPpal {
@@ -78,8 +86,8 @@ body{
     justify-content: center;
     /*width: 200px;*/
 
-    /*background: #282626; */
-    background-color: deeppink;
+    background: #282626; 
+    /*background-color: deeppink;*/
     color:white;
 }
 
@@ -181,14 +189,14 @@ body{
 @media (max-width: 1300px) {
 
     .logoMenu {
-        background-color: darkgray;
+        /*background-color: darkgray;*/
         height: 100px;
     }
 
 
     .queHacemosDesk {
         margin-top: 0px;
-        background-color: #95d64a;
+        /*background-color: #95d64a;*/
         padding-top: 20px;
         display:block;
         height: 200px;
@@ -411,7 +419,7 @@ body{
     .queHacemosMovil {
         padding-top: 10px;
         display: block!important;
-        background-color: #95d64a;
+       /* background-color: #95d64a;*/
         height: 310px;
 
     }
@@ -480,7 +488,7 @@ body{
         width:90%;
         margin:auto;
         /*background-color:#282626;*/
-        background-color: chartreuse!important;
+        /*background-color: chartreuse!important;*/
     }
 
 
@@ -717,7 +725,7 @@ body{
 .wpcf7-form {
     /*background-color: #ffffff; */
     padding-top: 10px;
-    background-color: rgb(132, 0, 255);
+    /*background-color: rgb(132, 0, 255);*/
 }
 
 .wpcf7-form .wpcf7-text {
@@ -732,6 +740,7 @@ body{
     border-radius: 20px;
     height: 80px;
     width:100%;
+    padding-left: 20px;
 }
 
 .divBotonSubmit {
