@@ -213,7 +213,7 @@ body{
     .casosDeExitoPpal {
         /*background-color: #f4f80e; //para test */
         background-color:#282626; 
-        height: 350px;
+        height: 400px;
         position:relative;    
     }
 
@@ -236,27 +236,27 @@ body{
     }
 
     .contenedorCasosExito {
-        height: 300px;
+        height: 400px;
         max-width: 600px;
         width:70%;
         margin:auto;
-        background-color:#282626;
-        /*background-color: chartreuse!important; para test */
+        /*background-color:#282626;*/
+        background-color: chartreuse!important; /*para test */
     }
 
     .slideShowCasosExito {
         margin-top: 25px;
         height: auto;        
-        background-color:#282626;
-        /*background-color: darkgoldenrod; para test */
+        /*background-color:#282626;*/
+        background-color: darkgoldenrod; /*para test */
     }
 
     .slideCasoExito{
         margin-top: 30px;
-        height: 300px;
+        height: 350px;
         width: 80%;
-        background-color:#282626;
-        /*background-color: indigo; para test */
+        /*background-color:#282626;*/
+        background-color: indigo; /*para test */
     }
     
     .contenedor-laminas-casos-exito {
@@ -790,7 +790,9 @@ body{
 
     .menuFooter .btnDonar {
         margin-top: 20px;
-        color:red;
+        background-color:#282626;
+
+        color:white;
     }
 
 

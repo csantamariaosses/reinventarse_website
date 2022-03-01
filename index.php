@@ -253,12 +253,12 @@
                 <div class="slideShowCasosExitoMovil">
                         <div class="slide slideCasoExitoMovil">
                             <div class="contenedor-laminas-alianzas-movil">
-                                <img src="<?php echo $PATH_IMAGES."/reinventarse_alianzas_01.png";?>" width="350px" class="lamina-alianzas-movil">    
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_movil_1.png";?>" width="350px" class="lamina-alianzas-movil">    
                             </div>
                         </div>
                         <div class="slide slideCasoExitoMovil">
                             <div class="contenedor-laminas-alianzas-movil">
-                                <img src="<?php echo $PATH_IMAGES."/reinventarse_alianzas_02.png";?>" width="350px"  class="lamina-alianzas-movil">
+                                <img src="<?php echo $PATH_IMAGES."/alianzas_movil_2.png";?>" width="350px"  class="lamina-alianzas-movil">
                             </div>
                         </div>
                     </div>
@@ -279,9 +279,10 @@
 
 <br>
 
+        <div id="salida">Salida</div>
         <?php
 
-        getLatestPosts();
+        //getLatestPosts();
        
          //echo "<br>".$arrNoticias[0]->title;
          //echo "<br>".$arrNoticias[0]->src;
@@ -290,10 +291,10 @@
         <br><br>
 <?php //if ( function_exists( 'wpsp_display' ) ) wpsp_display( 102 ); ?>
 xxxx
-<?php //echo do_shortcode( '[smart_post_show id="122"]' ); ?> 
+<?php echo do_shortcode( '[smart_post_show id="122"]' ); ?> 
 <?php if ( function_exists( 'wpsp_display' ) ) wpsp_display( 141 ); ?>
 xxxx
-<?php echo do_shortcode('[shortcodeTituloNoticias]'); ?>
+<?php //echo do_shortcode('[shortcodeTituloNoticias]'); ?>
 
 
 </div>
@@ -306,6 +307,8 @@ xxxx
 <script>
   $(document).ready(function(){
       //alert("jQuery");
+
+    
       
     $('.slideShow').slick({
         slidesToShow: 4,
@@ -352,6 +355,20 @@ xxxx
         dots: false,
         centerMode: true,
         focusOnSelect: true
+    });
+
+    $.ajax({
+        type:"POST",
+        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        data: {
+            desde:2,
+            cantidad:3
+        },
+        success: function( resp ) {
+            $("#salida").html( resp );
+        }
+
+
     });
 
     
@@ -443,6 +460,7 @@ xxxx
         }
     }
 }
+
 
 
 var imgNotic01 = document.getElementById('imgNotic01')

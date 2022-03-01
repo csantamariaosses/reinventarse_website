@@ -18,6 +18,8 @@ add_action( 'wp_enqueue_scripts', 'testmegamenu_enqueue_style' );
 add_action( 'wp_enqueue_scripts', 'testmegamenu_enqueue_script' );
 
 
+
+
 /**
  * Variable globales
  */
@@ -33,6 +35,7 @@ function myglobalvar() {
 }
 add_action('after_setup_theme','myglobalvar');
 
+/*
 class Noticia {
     public $posttitle;
     public $src;
@@ -134,13 +137,75 @@ function getLatestPosts(){
     echo "      </div>";
     echo "   </div>";
     echo "<br>";
-*/
     
 
 } 
-
+*/
 
 function sgteNoticia() {
     alert("SgteNoticia");
 }
+
+
+class Noticia {
+    public $posttitle;
+    public $src;
+    public $fileName;
+    public $fecha;
+};
+
+
+function mi_funcion() {
+    global $wpdb;
+    global $arrNoticias;
+
+    $desde = $_POST["desde"];
+    $cantidad = $_POST["cantidad"];
+
+    echo "<br>desde:" .  $desde;
+    echo "<br>cantidad:" .  $cantidad;
+
+    //echo "wpdb:".$wpdb;
+    global $wpdb;
+    $sql = "select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit ".$desde. ", ". $cantidad;
+    //$sql = "select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit 1";
+    echo "<br>" . $sql  ;
+
+    $result = $wpdb->get_results( $sql );
+    $cont = -1;
+    foreach ($result as $top) {
+        $postid = $top->ID;
+        $posttitle = $top->post_title;
+        $content = $top->post_content;
+        $fecha   = $top->post_date;
+        $imagen_ini = strpos( $content, '<img');
+        $imagen_fin = strpos( $content, '/>');
+        //echo "<br>". $content;
+        $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini );
+        echo "<br>imagen:" . $imagen;
+        $arr_img = explode(" ", $imagen);
+        $src = $arr_img[1];
+        $arr_src  = explode('"',$src);
+        $src = $arr_src[1];
+
+        //echo "<br>**" . $src."**<br>";
+
+        //$arr_file = explode("/", $arr_img[1]);
+        //$arch = substr($arr_file[8],0, strlen( $arr_file[8]) -1);
+            
+        $cont++;
+        $arrNoticias[$cont] =  new noticia();
+        $arrNoticias[$cont]->title = $posttitle;
+        $arrNoticias[$cont]->fecha = $fecha;
+        $arrNoticias[$cont]->src = $src;  
+        //echo "<br>".  $arrNoticias[$cont]->title;          
+    }
+    
+    echo  $arrNoticias;
+}
+
+// Creando las llamadas Ajax para el plugin de WordPress  
+add_action( 'wp_ajax_nopriv_mi_funcion', 'mi_funcion' );  
+add_action( 'wp_ajax_mi_funcion', 'mi_funcion' );  
+
 ?>
