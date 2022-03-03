@@ -148,6 +148,16 @@
             </div>
         </div>            
     </div>     
+
+
+    <div class="row teGustariaSerParte">
+        <div class="col-sm-12 mt-5">
+            <span class="tituloTeGustaria">¿Te gustaría ser parte y seguir apoyando a más personas?</span>
+        </div>
+        <div class="col-sm-12 mt-2">
+            <a href="#">Haz tu donación aquí</a>
+        </div>
+    </div>
     
 
     <div class="row mt-4 text-center">
@@ -183,6 +193,30 @@
             <button class="btn rounded-pill btnVerTodosLosProgramas">Ver todos los programas</button>
         </div>
     </div>  
+
+        <div>
+            <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>            
+        </div>
+
+     
+        <!-- NOTICIAS -->
+        <div id="noticiasDesk" class="noticiasDesk"></div>       
+        <div class="button-container">
+            <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>
+            <a href="#">Ver todas ls noticias</a>
+        </div>
+        
+        <div id="noticiasMovil" class="noticiasMovil"></div>    
+        <div class="row">
+            <div class="col-12">
+                <div class="button-container-movil">
+                    <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="100%" height="50px"/>
+                    <a href="#">Ver todas ls noticias</a>
+                </div>
+            </div>
+        </div>
+        <!-- NOTICIAS -->
+
 
     <div class="row mt-4 text-center fondo-oscuro alto-100 tituloAlianzasDesk">
         <div class="col-sm-12">
@@ -279,21 +313,14 @@
 
 <br>
 
-        <div id="salida">Salida</div>
-        <?php
-
-        //getLatestPosts();
        
-         //echo "<br>".$arrNoticias[0]->title;
-         //echo "<br>".$arrNoticias[0]->src;
-         
+        <?php        
+        //getLatestPosts();         
         ?>
         <br><br>
 <?php //if ( function_exists( 'wpsp_display' ) ) wpsp_display( 102 ); ?>
-xxxx
-<?php echo do_shortcode( '[smart_post_show id="122"]' ); ?> 
-<?php if ( function_exists( 'wpsp_display' ) ) wpsp_display( 141 ); ?>
-xxxx
+<?php //echo do_shortcode( '[smart_post_show id="220"]' ); ?> 
+<?php //if ( function_exists( 'wpsp_display' ) ) wpsp_display( 141 ); ?>
 <?php //echo do_shortcode('[shortcodeTituloNoticias]'); ?>
 
 
@@ -308,6 +335,7 @@ xxxx
   $(document).ready(function(){
       //alert("jQuery");
 
+    var desde = 0;
     
       
     $('.slideShow').slick({
@@ -323,7 +351,6 @@ xxxx
         autoplay: true,
         autoplaySpeed: 2000
     });
-
     
     $('.slideShowCasosExitoMovil').slick({
         slidesToShow: 1,
@@ -339,8 +366,6 @@ xxxx
         autoplaySpeed: 2000
     });
 
-    
-
     $('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -348,6 +373,7 @@ xxxx
         fade: true,
         asNavFor: '.slider-nav'
     });
+
     $('.slider-nav').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
@@ -357,20 +383,33 @@ xxxx
         focusOnSelect: true
     });
 
-    $.ajax({
+    $.ajax({        
         type:"POST",
         url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
         data: {
-            desde:2,
-            cantidad:3
+            desde:desde,
+            cantidad:3,
+            aparato:'desk'
         },
         success: function( resp ) {
-            $("#salida").html( resp );
+            $("#noticiasDesk").html( resp );
+            
         }
-
-
     });
 
+    $.ajax({        
+        type:"POST",
+        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        data: {
+            desde:desde,
+            cantidad:3,
+            aparato:'movil'
+        },
+        success: function( resp ) {
+            $("#noticiasMovil").html( resp );
+            
+        }
+    });
     
   });  
 
@@ -467,6 +506,43 @@ var imgNotic01 = document.getElementById('imgNotic01')
 var imgNotic02 = document.getElementById('imgNotic02')
 var imgNotic03 = document.getElementById('imgNotic03')
 
+function sgteDesk( desde ){
+    //alert("hola");
+    
+    $.ajax({
+        type:"POST",
+        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        data: {
+            desde:desde,
+            cantidad:3,
+            aparato:'desk'
+        },
+        success: function( resp ) {
+            $("#noticiasDesk").html( resp );
+        }
+
+
+    });
+}
+
+function sgteMovil( desde ){
+    //alert("hola");
+    
+    $.ajax({
+        type:"POST",
+        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        data: {
+            desde:desde,
+            cantidad:3,
+            aparato:'movil'
+        },
+        success: function( resp ) {
+            $("#noticiasMovil").html( resp );
+        }
+
+
+    });
+}
 
 </script>
 <?php get_footer()?>

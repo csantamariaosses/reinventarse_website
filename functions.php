@@ -26,6 +26,10 @@ add_action( 'wp_enqueue_scripts', 'testmegamenu_enqueue_script' );
 global $PATH_IMAGES;
 global $PATH_PAGES;
 global $arrNoticias;
+global $desde;
+
+$desde = 0;
+
 $PATH_IMAGES = '\\wordpress\\wp-content\\uploads\\';
 $PATH_PAGES = "\\wordpress";
 function myglobalvar() {
@@ -34,117 +38,6 @@ function myglobalvar() {
     global $arrNoticias;
 }
 add_action('after_setup_theme','myglobalvar');
-
-/*
-class Noticia {
-    public $posttitle;
-    public $src;
-    public $fileName;
-    public $fecha;
-};
-
-function getLatestPosts(){
-    //echo "<br>getLatestPosts";
-
-    
-    global $wpdb;
-    global $arrNoticias;
-
-    //echo "wpdb:".$wpdb;
-    $result = $wpdb->get_results("select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit 3");
-    $cont = -1;
-    foreach ($result as $topfive) {
-        $postid = $topfive->ID;
-        $posttitle = $topfive->post_title;
-        $content = $topfive->post_content;
-        $fecha   = $topfive->post_date;
-        $imagen_ini = strpos( $content, '<img');
-        $imagen_fin = strpos( $content, '/>');
-        $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini +2 );
-        $arr_img = explode(" ", $imagen);
-        $src = $arr_img[1];
-        $arr_file = explode("/", $arr_img[1]);
-        $arch = substr($arr_file[8],0, strlen( $arr_file[8]) -1);
-    
-        
-
-        //echo "<br>Src:" . $src;
-        //echo "<br>archivo:".$arch;
-        
-
-
-        
-        $cont++;
-        $arrNoticias[$cont] =  new Noticia();
-        $arrNoticias[$cont]->title = $posttitle;
-        $arrNoticias[$cont]->fecha = $fecha;
-        $arrNoticias[$cont]->src = $src;
-        
-    }
-
-    echo "   <div class='row' id='noticias'>";
-    echo "      <div class='col-2 tituloUltimasNoticiaDesk'>";
-    echo "             <div>Ultimas <br>Noticias</div>";
-    echo "      </div>";
-    echo "      <div class='col-6'>";
-    echo "          <img ".$arrNoticias[0]->src." width='400'>";
-    echo "          <div><span style='color:red;'>".$arrNoticias[0]->title."</span></div>";
-    echo "          <div><span style='color:red;'>".$arrNoticias[0]->fecha."</span></div>";
-    echo "      </div><br>";
-    echo "      <div class='col-3'>";
-    echo "          <div class='row'>";
-    echo "               <div class='col-12'>";
-    echo "                   <img ".$arrNoticias[1]->src." width='200' >";
-    echo "                   <div><span style='color:red;'>".$arrNoticias[1]->title."</span></div>";
-    echo "                   <div><span style='color:red;'>".$arrNoticias[1]->fecha."</span></div>";    
-    echo "               </div>";
-    echo "               <div class='col-12'>";
-    echo "                   <img ".$arrNoticias[2]->src." width='200' style='margin-top:20px'>";
-    echo "                   <div><span style='color:red;'>".$arrNoticias[2]->title."</span></div>";
-    echo "                   <div><span style='color:red;'>".$arrNoticias[2]->fecha."</span></div>";        
-    echo "               </div>";    
-    echo "          </div>";
-    echo "      </div>";
-    echo "      <div class='col-1 flechaSgteUltimasNoticias'>";
-    echo "             <div><button>Siguiente</button></div>";
-    echo "      </div>";
-    echo "   </div>";
-    echo "<br>";
-
-    
-
-    
-    /*
-    echo "   <div class='row'><br>";
-    echo "      <div class='col-2 tituloUltimasNoticiaDesk'>";
-    echo "             <div>Ultimas <br>Noticias</div>";
-    echo "      </div>";
-    echo "      <div class='col-6'><br>";
-    echo "          <img ".$arrNoticias[1]->src." width='400'>";
-    echo "      </div><br>";
-    echo "      <div class='col-3'><br>";
-    echo "          <div class='row'>";
-    echo "               <div class='col-12'>";
-    echo "                   <img ".$arrNoticias[2]->src." width='200' >";
-    echo "               </div>";
-    echo "               <div class='col-12'>";
-    echo "                   <img ".$arrNoticias[3]->src." width='200' style='margin-top:20px'>";
-    echo "               </div>";    
-    echo "          </div>";
-    echo "      </div>";
-    echo "      <div class='col-1 flechaSgteUltimasNoticias'>";
-    echo "             <div>></div>";
-    echo "      </div>";
-    echo "   </div>";
-    echo "<br>";
-    
-
-} 
-*/
-
-function sgteNoticia() {
-    alert("SgteNoticia");
-}
 
 
 class Noticia {
@@ -159,17 +52,12 @@ function mi_funcion() {
     global $wpdb;
     global $arrNoticias;
 
-    $desde = $_POST["desde"];
+    $desde    = $_POST["desde"];
     $cantidad = $_POST["cantidad"];
+    $aparato  = $_POST["aparato"];
 
-    echo "<br>desde:" .  $desde;
-    echo "<br>cantidad:" .  $cantidad;
-
-    //echo "wpdb:".$wpdb;
     global $wpdb;
     $sql = "select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit ".$desde. ", ". $cantidad;
-    //$sql = "select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit 1";
-    echo "<br>" . $sql  ;
 
     $result = $wpdb->get_results( $sql );
     $cont = -1;
@@ -180,28 +68,100 @@ function mi_funcion() {
         $fecha   = $top->post_date;
         $imagen_ini = strpos( $content, '<img');
         $imagen_fin = strpos( $content, '/>');
-        //echo "<br>". $content;
+
         $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini );
-        echo "<br>imagen:" . $imagen;
+
         $arr_img = explode(" ", $imagen);
         $src = $arr_img[1];
         $arr_src  = explode('"',$src);
         $src = $arr_src[1];
 
-        //echo "<br>**" . $src."**<br>";
 
-        //$arr_file = explode("/", $arr_img[1]);
-        //$arch = substr($arr_file[8],0, strlen( $arr_file[8]) -1);
             
         $cont++;
         $arrNoticias[$cont] =  new noticia();
         $arrNoticias[$cont]->title = $posttitle;
         $arrNoticias[$cont]->fecha = $fecha;
         $arrNoticias[$cont]->src = $src;  
-        //echo "<br>".  $arrNoticias[$cont]->title;          
+        
     }
+    $desde = $desde + 1;
+
+    if( $aparato == 'desk' ) {
+        $str  = "<div class='row divNoticias' >";
+        $str .= "   <div class='col-2 tituloNoticias'><br><br><br><br>Últimas<br>noticias<br></div>";
+        $str .= "   <div class='col-6'>";
+        $str .= "      <img src='". $arrNoticias[0]->src ."' class='imgNoticia'>";
+        $str .= "      <p class='tituloNoticia'>". $arrNoticias[0]->title."</p>";
+        $str .= "   </div>";
+        $str .= "   <div class='col-3'>";
+        $str .= "     <div>";
+        $str .= "         <img src='". $arrNoticias[1]->src ."' class='imgNoticia'>";  
+        $str .= "         <p class='tituloNoticia'>". $arrNoticias[1]->title ."</p>";    
+        $str .= "     </div>";
+        $str .= "     <div>";
+        $str .= "         <img src='". $arrNoticias[2]->src ."'  class='imgNoticia'>";  
+        $str .= "         <p class='tituloNoticia'>". $arrNoticias[2]->title ."</p>";    
+        $str .= "     </div>";
+        $str .= "   </div>";
+        if( $cont == 2 ) {
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+        } else {
+            $desde = 0;
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+        }    
+        $str .= "</div>";
+
+
+    }
+
+
+
+    if( $aparato == 'movil' ) {
+        $str  = "<div class='row fondoNegro' >";
+        $str .= "<hr>";
+        $str .= "</div>";
+
+        $str .= "<div class='row mt-4' >";
+        $str .= " <div class='col-xs-12 tituloUltimasNoticiasMovil'>Últimas noticias</div>";
+        $str .= "</div>";
+
+        $str .= "<div class='row' >";
+        $str .= "<div class='col-1'></div>";
+        $str .= "  <div class='col-10'>";
+        $str .= "      <img src='". $arrNoticias[0]->src ."' class='imgNoticia'>";
+        $str .= "      <p class='tituloNoticiaMovil'>". $arrNoticias[0]->title."</p>";
+        $str .= "  </div>";
+        $str .= "<div class='col-1'></div>";        
+        $str .= "</div>";
+
+        $str .= "<div class='row'>";
+        $str .= "  <div class='col-1'></div>";
+        $str .= "  <div class='col-5'>";
+        $str .= "    <img src='". $arrNoticias[1]->src ."' class='imgNoticia'>";  
+        $str .= "    <p class='tituloNoticiaMovil'>". $arrNoticias[1]->title ."</p>";    
+        $str .= "  </div>";
+        $str .= "  <div class='col-5'> ";
+        $str .= "    <img src='". $arrNoticias[2]->src ."'  class='imgNoticia'>";  
+        $str .= "    <p class='tituloNoticiaMovil'>". $arrNoticias[2]->title ."</p>";    
+        $str .= "  </div>";
+        $str .= "  <div class='col-1'></div>";
+        $str .= "</div>";
+
+        $str .= "<div class='row'>";
+        if( $cont == 2 ) {
+            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$desde.");'>></div>";
+        } else {
+            $desde = 0;
+            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$desde.");'>></div>";
+        }    
+        $str .= "</div>"; 
+        
+    }
+
     
-    echo  $arrNoticias;
+
+    echo $str;
 }
 
 // Creando las llamadas Ajax para el plugin de WordPress  

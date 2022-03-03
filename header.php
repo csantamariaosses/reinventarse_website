@@ -24,5 +24,6 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
             </div>
         </div>
-        <hr class="barraInferiorMenu">
+        <!--<hr class="barraInferiorMenu"> -->
+        <div class="barraMenu"></div>
     </div>

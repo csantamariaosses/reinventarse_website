@@ -36,6 +36,12 @@ body{
     height:8px!important;
 }
 
+.barraMenu {
+    background-color:rgb(245, 113, 6)!important;
+    margin-top: 5px;
+    height: 10px;
+}
+
 .queHacemos{
     padding-top: 10px;
     background-color: white;
@@ -275,6 +281,28 @@ body{
         border-radius: 50%;
     }
 
+
+    .teGustariaSerParte{
+        background-color:#282626;
+        height:250px;
+        text-align: center;
+    }
+
+    .teGustariaSerParte a {
+        text-decoration: none;
+        background-color:#8F0005;
+        border-radius:1.5em;
+        color:white;
+        width:50px;
+        padding:1%;
+    }
+
+    .tituloTeGustaria {
+        color:white;
+        font-size: 30px;       
+        padding-top:10px;
+    }
+
     .queHacemosMovil {
         display: none!important;
     }
@@ -404,6 +432,52 @@ body{
         display: none!important;
     }
     
+
+    /* noticias */
+    .noticiasDesk {
+        display:block!important;
+    }
+
+    .button-container-movil{        
+        display:none;
+    }
+
+
+    .button-container{        
+        display:inline-block;
+        position:relative;
+    }
+    
+    
+    .button-container a{
+        position: absolute;
+        bottom:-1em;
+        right:90px;
+        background-color:#8F0005;
+        border-radius:1.5em;
+        color:white;
+        text-transform:uppercase;
+        padding:1em 1.5em;
+        text-decoration: none;
+    }
+
+    .divBotonVerTodosNoticiasDesk {
+        display:block!important;
+    }
+
+    .botonVerTodasLasNoticiasDesk {
+        display:block!important;
+    }
+
+
+    .noticiasMovil {
+        display:none!important;
+    }
+
+    .divBotonVerTodosNoticiasMovil{
+        display:none!important;
+    }
+    /*# noticias */
 
     
 }
@@ -574,19 +648,66 @@ body{
         vertical-align: Top;
     }
 
-    /*
-    #your-name {
-        width: 100%;
+
+    /* noticias */
+    .button-container{        
+        display:none!important;
     }
 
-    #your-email {
-        width: 100%;
+    #noticiasDesk {
+        display:none!important;
     }
-    #your-message {
-        margin-top: 20px;
-        height: 20px;
+
+    .divBotonVerTodosNoticiasDesk {
+        display:none!important;
     }
-*/
+
+
+    .noticiasMovil {
+        display:block!important;
+    }
+
+    .tituloNoticiaMovil {
+        color:black;
+    }
+
+    .divBotonVerTodosNoticiasMovil{
+        display:block!important;
+    }
+
+    .lineaFondo {
+        background-image: url('http://localhost/wordpress/wp-content/uploads/Line_9.png');
+        background-size:contain;
+        /*
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 10px;
+        margin-top: 10px;
+        */
+    }
+    
+
+    .tituloUltimasNoticiasMovil {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .lineaNegraGruesa {
+        background-color:black!important;
+        height:15px!important;        
+    }
+
+    .fondoNegro {
+        background-color:black!important;
+        height:5px!important;
+    }
+
+    .lineaBajoBoton {
+        background-image: url('/assets/img/fondo-cabecera.jpg'); 
+    }
+
+    /*# noticias */
 
 
     /* Estadisticas */
@@ -613,108 +734,24 @@ body{
     /* fin estadisticas */
 
 
-
-    /*
-    .menuHeaderMovil {
-        display: block!important;
+    .button-container-movil{        
+        display:block;
+        position:relative;
     }
-
-    .nav_header_wp_movil li {
+    
+    
+    .button-container-movil a{
+        position: absolute;
+        bottom:-1em;
+        right:150px;
+        background-color:#8F0005;
+        border-radius:1.5em;
+        color:white;
+        text-transform:uppercase;
+        padding:1em 1.5em;
         text-decoration: none;
-
+        text-align: center;
     }
-
-    .menuHeader {
-        display:none!important;
-    }
-
-
-    .button-menu {
-        z-index: 200;
-        width: 40px;
-        height: 40px;
-        border: none;
-        display: flex;
-        background: none;
-        flex-direction: column; 
-        align-items: right;
-        justify-content: right;
-        cursor: pointer;
-        margin-left: 120px;
-      }
-      */
-      /* 
-        Dibujamos una línea recta por cada span creando el tipico menu hamburguesa
-      */
-      /*
-      .button-menu span {
-        width: 37px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #444444;
-        color:darkred;
-        border-radius: 10px;
-        /*transform-origin: 4px 0px;
-        transition: all 0.2s linear;
-
-      }
-      */
-      /* 
-        con los span dibujamos un icono de cerrar 
-        para mostrar cuándo la navegación este abierta 
-      */
-      
-      /*
-      .button-menu.close span {
-        opacity: 1;
-        transform: rotate(45deg) translate(0px, 0px);
-        background: #ffffff;
-      }
-      
-      .button-menu.close span:nth-child(2) {
-        transform: rotate(-45deg) translate(-8px, 5px);
-      }
-      
-      .button-menu.close span:nth-child(3) {
-        display: none;
-      }
-
-
-
-      .nav-links {
-        margin-top: 50px;
-        background-color: rgb(250, 250, 250);
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        height: 50%;
-        align-items: center;
-        justify-content: flex-start;
-      }
-      
-      .link-item {
-        margin-top: 10px;
-        color: #444444;
-        text-decoration: none;
-        font-weight: bold;
-        position: relative;
-      }
-
-      .tituloMenu {
-
-        align-items: right;
-        color:black;
-        font-size: 18px;
-        margin-left: 130px;
-       /* background-color: darkslategrey;
-      }
-
-      .nav_header_wp_movil li {
-        list-style: none;
-     }
-
-*/
     
 }
 
@@ -755,6 +792,7 @@ body{
 }
 
 /* Fin Formulario */
+
 
 
 /* FOOTER */
@@ -833,6 +871,18 @@ body{
     .menuFooter button {
         margin-top: 10px;
     }
+    
+
+    /* noticias */
+    #noticiasDesk {
+        display:none;
+    }
+
+    #noticiasMovil {
+        display:block;
+    }
+    /*# noticias */
+
     
     /*
     .nav-footer {
@@ -1066,3 +1116,28 @@ body{
     display: flex;
     align-items: center;
 }
+
+
+.divNoticias {
+    background-color: brown;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.imgNoticia {
+    margin-top: 10px;
+    width:100%;
+}
+
+.tituloNoticias {
+    color:white;
+    font-size:32px;
+}
+
+
+.tituloNoticia {
+    color:white;
+    font-size:15px;
+}
+
+
+
