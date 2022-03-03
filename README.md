@@ -2,3 +2,6 @@
 Repo del proyecto de voluntariado para el Website de la fundación Reinventarse
 
 Se crea como un tema nuevo vacío.
+
+Plugin: Contact Form 7
+Tema: Tema nuevo vacio reinventarse

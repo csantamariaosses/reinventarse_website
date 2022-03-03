@@ -1,5 +1,6 @@
 <?php
 
+/* encolar estilos y script*/
 function testmegamenu_enqueue_style() {
     wp_enqueue_style( 'my-theme', get_stylesheet_directory_uri().'/style.css', 
     '', 
@@ -40,6 +41,7 @@ function myglobalvar() {
 add_action('after_setup_theme','myglobalvar');
 
 
+/* Manejo de noticias con ajax*/
 class Noticia {
     public $posttitle;
     public $src;
