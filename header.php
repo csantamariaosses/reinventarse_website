@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row logoMenu">
             <div class="col-6">
-                <a href=""><img src="<?php echo $PATH_IMAGES."/logoReinventarseHeader.png";?>" width="200"></a>
+                <a href="/index.php"><img src="<?php echo $PATH_IMAGES."/logoReinventarseHeader.png";?>" width="200"></a>
             </div>
             <div class="col-6">
                 <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>

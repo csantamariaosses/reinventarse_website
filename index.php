@@ -35,7 +35,6 @@
     </div>   
 
 
-
     <div class="row mt-4 casosDeExitoPpal">
         <div class="col-sm-6 flexbox divTituloCasosDeExito">
             <span class="tituloCasosDeExito">Casos de éxito</span>
@@ -45,7 +44,7 @@
                 <div class="slideShowCasosExitoMovil">
                     <div class="slide slideCasoExito">
                         <div class="contenedor-laminas-casos-exito">
-                            <img src="<?php echo $PATH_IMAGES."/reinventarse_caso_exito_01.png";?>" width="20px" class="laminaCasoDeExito">    
+                            <img src="<?php echo $PATH_IMAGES."/reinventarse_caso_exito_01.png";?>" width="210px" class="laminaCasoDeExito">    
                         </div>
                     </div>
                     <div class="slide slideCasoExito">
@@ -135,7 +134,7 @@
             <div class="row">
                 <div class="col-4">
                     <p class="cifra"><span name="valorMovil_1" id="valorMovil_1">0</span></p>
-                    <p class="glosa">Jóvenes capacitados</p>
+                    <p class="glosa">Jóvenes capacitados M</p>
                 </div>
                 <div class="col-4">
                     <p class="cifra"><span name="valorMovil_2" id="valorMovil_2">0</span></p>
@@ -167,50 +166,44 @@
     </div> 
 
     <div class="row">
-        <div class="col-sm-4 text-center lamina-programa">
-            <div>                                        
+        <div class="col-sm-4 lamina-programa">                                                 
                 <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_01.png";?>"  height="250px" width="300px">
-                <div class="centrado">Programa integral de habilitación laboral</div>
-            </div>
+                <div class="centrado">Programa integral de habilitación laboral</div>            
         </div>
-        <div class="col-sm-4 text-center lamina-programa">
-            <div>                    
-                
+        <div class="col-sm-4 lamina-programa">               
                 <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_02.png";?>"  height="250px" width="300px">
                 <div class="centrado">Programa de intermediación laboral</div>
-            </div>
         </div>
-        <div class="col-sm-4 text-center lamina-programa">
-            <div>
-                
+        <div class="col-sm-4 lamina-programa">
                 <img src="<?php echo $PATH_IMAGES."/nuestrosProgramas_01.png";?>"  height="250px" width="300px">
                 <div class="centrado">Programa integral de habilitación laboral</div>
-            </div>                    
         </div>
     </div>
     <div class="row mt-2">
-        <div class="col-sm-12 divBtnVer">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 divBtnVer">
             <button class="btn rounded-pill btnVerTodosLosProgramas">Ver todos los programas</button>
         </div>
+        
     </div>  
 
         <div>
-            <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>            
+            <img src="/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>            
         </div>
 
-     
         <!-- NOTICIAS -->
         <div id="noticiasDesk" class="noticiasDesk"></div>       
         <div class="button-container">
-            <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>
-            <a href="#">Ver todas ls noticias</a>
+            <img src="/wp-content/uploads/Line_9.png" width="1050px" height="50px"/>
+            <a href="#">Ver todas las noticias</a>
         </div>
         
         <div id="noticiasMovil" class="noticiasMovil"></div>    
-        <div class="row">
+        <div class="row btnVerTodasNoticiasMovil">
             <div class="col-12">
                 <div class="button-container-movil">
-                    <img src="http://localhost/wordpress/wp-content/uploads/Line_9.png" width="100%" height="50px"/>
+                    <img src="/wp-content/uploads/Line_9.png" width="100%" height="50px"/>
                     <a href="#">Ver todas ls noticias</a>
                 </div>
             </div>
@@ -218,13 +211,15 @@
         <!-- NOTICIAS -->
 
 
-    <div class="row mt-4 text-center fondo-oscuro alto-100 tituloAlianzasDesk">
+<br><br><br>
+
+    <div class="row mt-4 text-center  tituloAlianzasDesk">
         <div class="col-sm-12">
-            <span class="spanTituloAlianzasDesk">Nuestras alianzas Desk</span>
+            <span class="spanTituloAlianzasDesk"><br>Nuestras alianzas Desk</span>
         </div>            
     </div> 
 
-    <div class="row fondo-oscuro alianzasDesk">
+    <div class="row fondo-oscuro alianzasDesk">        
             <div class="col-sm-12">
                 <div class="contenedorAlianzasDesk">
                     <div class="slideShow">
@@ -311,11 +306,102 @@
         <?php echo do_shortcode ("[contact-form-7 id='34' title='Formulario de contacto 1']"); ?>
 
 
+
 <br>
 
        
         <?php        
-        //getLatestPosts();         
+
+        //getLatestPosts(); 
+
+        /*
+        $args = array(
+            "posts_per_page" => 3, 
+            "paged"          => 1,
+            "orderby"        => "post_date"
+        );
+
+
+        $posts_array = get_posts($args);
+        $cont2 = -1;
+        foreach($posts_array as $post)
+        {
+          $title = $post->post_title;
+          echo "<h1>" . $title . "</h1><br>";
+          $content = $post->post_content; 
+          //echo "<br>Contenido:".$content;
+          $imagen_ini = strpos( $content, '<img');
+          $imagen_fin = strpos( $content, '/>');
+
+          $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini );
+
+          $arr_img = explode(" ", $imagen);
+          $src = $arr_img[1];
+          $arr_src  = explode('"',$src);
+          $src = $arr_src[1];
+          //echo "<br>". $src;
+          $src_arr = explode("/",$src);
+          $arch = $src_arr[  count($src_arr ) - 1 ]; 
+          //echo "<br>". count($src_arr );
+          echo "<br>archImagen:". $arch;
+
+          /* Parrafo */
+          /*
+          $parrafo_ini = strpos( $content, '<p>');
+          $parrafo_fin = strpos( $content, '</p>');
+          $parrafo     = substr( $content, $parrafo_ini, $parrafo_fin - $parrafo_ini );
+          echo "<br>Parrafo:" . $parrafo;
+
+          $fecha = $post->post_date;
+          echo "<br>Fecha:". $fecha;
+
+          $cont2++;
+          $arrNoticias[$cont2] =  new noticia();
+          $arrNoticias[$cont2]->title = $title;
+          $arrNoticias[$cont2]->fecha = $fecha;
+          $arrNoticias[$cont2]->src = $src; 
+        } 
+
+
+        $str  = "<div class='row divNoticias' >";
+        $str .= "   <div class='col-2 tituloNoticias'><br><br><br><br>Últimas<br>noticias<br></div>";
+        $str .= "   <div class='col-6'>";
+        $str .= "      <img src='". $arrNoticias[0]->src ."' class='imgNoticia'>";
+        $str .= "      <p class='tituloNoticia'>". $arrNoticias[0]->title."</p>";
+        $str .= "   </div>";
+        $str .= "   <div class='col-3'>";
+        $str .= "     <div>";
+        $str .= "         <img src='". $arrNoticias[1]->src ."' class='imgNoticia'>";  
+        $str .= "         <p class='tituloNoticia'>". $arrNoticias[1]->title ."</p>";    
+        $str .= "     </div>";
+        $str .= "     <div>";
+        $str .= "         <img src='". $arrNoticias[2]->src ."'  class='imgNoticia'>";  
+        $str .= "         <p class='tituloNoticia'>". $arrNoticias[2]->title ."</p>";    
+        $str .= "     </div>";
+        $str .= "   </div>";
+        if( $cont == 2 ) {
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+        } else {
+            $desde = 0;
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+        }    
+        $str .= "</div>";
+        echo $str;
+
+/*
+        $args = array(
+            "posts_per_page" => 3, 
+            "paged"          => 2,
+            "orderby" => "post_date"
+        );
+        /*
+        $posts_array = get_posts($args);
+        foreach($posts_array as $post)
+        {
+          echo "<h1>" . $post->post_title . "</h1><br>";
+          echo "<p>" . $post->post_content . "</p><br>";
+        } 
+        */
         ?>
         <br><br>
 <?php //if ( function_exists( 'wpsp_display' ) ) wpsp_display( 102 ); ?>
@@ -329,14 +415,23 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="<?php bloginfo('template_url')?>/js/slick.min.js"></script> 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/scroll-utility.min.js"></script> 
 <script>
   $(document).ready(function(){
       //alert("jQuery");
 
-    var desde = 0;
+    var pagina = 1;
     
+
+    $('.slick-test').slick ({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true
+    });
       
     $('.slideShow').slick({
         slidesToShow: 4,
@@ -385,9 +480,9 @@
 
     $.ajax({        
         type:"POST",
-        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        url: "/wp-admin/admin-ajax.php?action=mi_funcion",
         data: {
-            desde:desde,
+            pagina:pagina,
             cantidad:3,
             aparato:'desk'
         },
@@ -399,9 +494,9 @@
 
     $.ajax({        
         type:"POST",
-        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        url: "/wp-admin/admin-ajax.php?action=mi_funcion",
         data: {
-            desde:desde,
+            pagina:pagina,
             cantidad:3,
             aparato:'movil'
         },
@@ -506,14 +601,13 @@ var imgNotic01 = document.getElementById('imgNotic01')
 var imgNotic02 = document.getElementById('imgNotic02')
 var imgNotic03 = document.getElementById('imgNotic03')
 
-function sgteDesk( desde ){
-    //alert("hola");
+function sgteDesk( pagina ){
     
     $.ajax({
         type:"POST",
-        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        url: "/wp-admin/admin-ajax.php?action=mi_funcion",
         data: {
-            desde:desde,
+            pagina:pagina,
             cantidad:3,
             aparato:'desk'
         },
@@ -525,14 +619,13 @@ function sgteDesk( desde ){
     });
 }
 
-function sgteMovil( desde ){
-    //alert("hola");
+function sgteMovil( pagina ){
     
     $.ajax({
         type:"POST",
-        url: "http://localhost/wordpress/wp-admin/admin-ajax.php?action=mi_funcion",
+        url: "/wp-admin/admin-ajax.php?action=mi_funcion",
         data: {
-            desde:desde,
+            pagina:pagina,
             cantidad:3,
             aparato:'movil'
         },
@@ -546,3 +639,4 @@ function sgteMovil( desde ){
 
 </script>
 <?php get_footer()?>
+

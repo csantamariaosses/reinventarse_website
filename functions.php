@@ -1,6 +1,10 @@
 <?php
 
-/* encolar estilos y script*/
+/**
+ * encolar estilos y script
+ * 
+ */
+
 function testmegamenu_enqueue_style() {
     wp_enqueue_style( 'my-theme', get_stylesheet_directory_uri().'/style.css', 
     '', 
@@ -31,7 +35,7 @@ global $desde;
 
 $desde = 0;
 
-$PATH_IMAGES = '\\wordpress\\wp-content\\uploads\\';
+$PATH_IMAGES = "\\wp-content\\uploads\\";
 $PATH_PAGES = "\\wordpress";
 function myglobalvar() {
     global $PATH_IMAGES;
@@ -54,63 +58,79 @@ function mi_funcion() {
     global $wpdb;
     global $arrNoticias;
 
-    $desde    = $_POST["desde"];
+    $pagina  = $_POST["pagina"];
     $cantidad = $_POST["cantidad"];
-    $aparato  = $_POST["aparato"];
+    $aparato = $_POST["aparato"];
 
-    global $wpdb;
-    $sql = "select ID,post_title, post_content, post_date  from wp_posts where post_status = 'publish'  and post_type = 'post' order by post_date desc  limit ".$desde. ", ". $cantidad;
+    
 
-    $result = $wpdb->get_results( $sql );
+    $args = array(
+        "posts_per_page" => $cantidad, 
+        "paged"          => $pagina,
+        "orderby"        => "post_date"
+    );
+
+
+    $posts_array = get_posts($args);
     $cont = -1;
-    foreach ($result as $top) {
-        $postid = $top->ID;
-        $posttitle = $top->post_title;
-        $content = $top->post_content;
-        $fecha   = $top->post_date;
-        $imagen_ini = strpos( $content, '<img');
-        $imagen_fin = strpos( $content, '/>');
+    foreach($posts_array as $post)
+    {
+      $title = $post->post_title;
+      $content = $post->post_content; 
+      $imagen_ini = strpos( $content, '<img');
+      $imagen_fin = strpos( $content, '/>');
 
-        $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini );
+      $imagen = substr( $content, $imagen_ini, $imagen_fin - $imagen_ini );
 
-        $arr_img = explode(" ", $imagen);
-        $src = $arr_img[1];
-        $arr_src  = explode('"',$src);
-        $src = $arr_src[1];
+      $arr_img = explode(" ", $imagen);
+      $src = $arr_img[1];
+      $arr_src  = explode('"',$src);
+      $src = $arr_src[1];
+      $src_arr = explode("/",$src);
+      $arch = $src_arr[  count($src_arr ) - 1 ]; 
 
+      /* Parrafo */
+      $parrafo_ini = strpos( $content, '<p>');
+      $parrafo_fin = strpos( $content, '</p>');
+      $parrafo     = substr( $content, $parrafo_ini, $parrafo_fin - $parrafo_ini );
 
-            
-        $cont++;
-        $arrNoticias[$cont] =  new noticia();
-        $arrNoticias[$cont]->title = $posttitle;
-        $arrNoticias[$cont]->fecha = $fecha;
-        $arrNoticias[$cont]->src = $src;  
-        
-    }
-    $desde = $desde + 1;
+      $fecha = $post->post_date;
+
+      $cont++;
+      $arrNoticias[$cont]           =  new noticia();
+      $arrNoticias[$cont]->title    = $title;
+      $arrNoticias[$cont]->fecha    = $fecha;
+      $arrNoticias[$cont]->fileName = $src; 
+    } 
+
+   
+    $pagina = $pagina + 1;
 
     if( $aparato == 'desk' ) {
         $str  = "<div class='row divNoticias' >";
         $str .= "   <div class='col-2 tituloNoticias'><br><br><br><br>Últimas<br>noticias<br></div>";
         $str .= "   <div class='col-6'>";
-        $str .= "      <img src='". $arrNoticias[0]->src ."' class='imgNoticia'>";
+        $str .= "      <div>";
+        $str .= "      <img src='".$arrNoticias[0]->fileName ."' class='imgNoticia'>";
         $str .= "      <p class='tituloNoticia'>". $arrNoticias[0]->title."</p>";
+        $str .= "      </div>";
+        //$str .= "      <div class='tituloNoticia'>".$arrNoticias[0]->title."</div>";
         $str .= "   </div>";
         $str .= "   <div class='col-3'>";
         $str .= "     <div>";
-        $str .= "         <img src='". $arrNoticias[1]->src ."' class='imgNoticia'>";  
+        $str .= "         <img src='". $arrNoticias[1]->fileName ."' class='imgNoticia'>";  
         $str .= "         <p class='tituloNoticia'>". $arrNoticias[1]->title ."</p>";    
         $str .= "     </div>";
         $str .= "     <div>";
-        $str .= "         <img src='". $arrNoticias[2]->src ."'  class='imgNoticia'>";  
+        $str .= "         <img src='". $arrNoticias[2]->fileName ."'  class='imgNoticia'>";  
         $str .= "         <p class='tituloNoticia'>". $arrNoticias[2]->title ."</p>";    
         $str .= "     </div>";
         $str .= "   </div>";
         if( $cont == 2 ) {
-            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$pagina.");'>></div>";
         } else {
-            $desde = 0;
-            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$desde.");'>></div>";
+            $pagina = 1;
+            $str .= " <div class='col-1'><br><br><br><br><br><br><br><br><br><button class='btn btn-primary' onClick='sgteDesk(".$pagina.");'>></div>";
         }    
         $str .= "</div>";
 
@@ -130,9 +150,12 @@ function mi_funcion() {
 
         $str .= "<div class='row' >";
         $str .= "<div class='col-1'></div>";
-        $str .= "  <div class='col-10'>";
-        $str .= "      <img src='". $arrNoticias[0]->src ."' class='imgNoticia'>";
-        $str .= "      <p class='tituloNoticiaMovil'>". $arrNoticias[0]->title."</p>";
+        $str .= "  <div class='col-10 text-center laminaNoticia'>";
+        $str .= "      <div>";
+        $str .= "      <img src='". $arrNoticias[0]->fileName ."' class='imgNoticia'>";
+        //$str .= "      <p class='tituloNoticiaMovil'>". $arrNoticias[0]->title."</p>";
+        $str .= "      <div>".$arrNoticias[0]->title."</div>";
+        $str .= "      </div>";
         $str .= "  </div>";
         $str .= "<div class='col-1'></div>";        
         $str .= "</div>";
@@ -140,11 +163,11 @@ function mi_funcion() {
         $str .= "<div class='row'>";
         $str .= "  <div class='col-1'></div>";
         $str .= "  <div class='col-5'>";
-        $str .= "    <img src='". $arrNoticias[1]->src ."' class='imgNoticia'>";  
+        $str .= "    <img src='". $arrNoticias[1]->fileName ."' class='imgNoticia'>";  
         $str .= "    <p class='tituloNoticiaMovil'>". $arrNoticias[1]->title ."</p>";    
         $str .= "  </div>";
         $str .= "  <div class='col-5'> ";
-        $str .= "    <img src='". $arrNoticias[2]->src ."'  class='imgNoticia'>";  
+        $str .= "    <img src='". $arrNoticias[2]->fileName ."'  class='imgNoticia'>";  
         $str .= "    <p class='tituloNoticiaMovil'>". $arrNoticias[2]->title ."</p>";    
         $str .= "  </div>";
         $str .= "  <div class='col-1'></div>";
@@ -152,17 +175,14 @@ function mi_funcion() {
 
         $str .= "<div class='row'>";
         if( $cont == 2 ) {
-            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$desde.");'>></div>";
+            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$pagina.");'>></div>";
         } else {
-            $desde = 0;
-            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$desde.");'>></div>";
+            $pagina = 1;
+            $str .= " <div class='col-xs-12 text-center'><button class='btn btn-primary' onClick='sgteMovil(".$pagina.");'>></div>";
         }    
         $str .= "</div>"; 
         
-    }
-
-    
-
+    }    
     echo $str;
 }
 

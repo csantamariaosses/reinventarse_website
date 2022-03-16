@@ -48,29 +48,6 @@ body{
     height: 250px;
 }
 
-
-
-@media (max-width: 600px) {
-    .casosDeExitoPpal {
-        background-color: #282626;
-        /*background-color: blue;*/
-        height: 500px;
-        position:relative;
-    }
-
-      
-
-    .alianzasMovilPpal {
-        background-color: #282626;
-        height: 500px;
-        position:relative;
-    }
-}
-
-
-
-
-
 .divTituloCasosExito {
    position: absolute;
    top: 50%;
@@ -96,30 +73,250 @@ body{
 }
 
 
-@media (max-width: 600px) {
-    .flexbox {
+
+
+@media screen and (min-width: 1301px) {
+    .logoMenu {
+        /*background-color: #8F0005;*/
+        padding-top: 30px;
+        height: 100px;
+    }
+    
+
+    .queHacemosMovil {
+        display: none!important;
+    }
+
+    .testCasosExito {
+        background-color: brown;
+        width: 90%;
+    }
+
+    .casosDeExitoPpal {
+        /*background-color: #f4f80e; //para test */
+        background-color:#282626; 
+        height: 400px;
+        position:relative;    
+    }
+
+    .casosDeExitoPpal .tituloCasosDeExito{
+        /*background-color: #f00; para test */
+        background-color:#282626; 
+        font-size: 30px;
+        color:white;
+    }   
+
+    .divTituloCasosDeExito {
+        /*background-color:palevioletred; para test */
+        background-color:#282626; 
+
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+        height: 90%;
+    }
+
+    .contenedorCasosExito {
+        height: 400px;
+        max-width: 600px;
+        width:70%;
+        margin:auto;
         background-color:#282626;
-        height: 150px;
+        /*background-color: chartreuse!important; para test */
+    }
+
+    .slideShowCasosExito {
+        margin-top: 25px;
+        height: auto;        
+        background-color:#282626;
+        /*background-color: darkgoldenrod; para test */
+    }
+
+    .slideCasoExito{
+        margin-top: 30px;
+        height: 350px;
+        width: 80%;
+        background-color:#282626;
+        /*background-color: indigo; para test */
+    }
+    
+    .contenedor-laminas-casos-exito {
+        max-width: 1200px;        
+        width:80%;
+        margin:auto;
+        background-color:#282626;
+        /*background-color: orangered; para test */
+    }
+    
+    .laminaCasoDeExito {
+        width:90%;
+        height: 300px;
+        margin-left: 15px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .casosDeExitoTituloMovil{
+        display:none!important;
+    }
+    
+    .casosDeExitoContenedorMovil{
+        display:none!important;
+    }
+
+    .estadisticasMovil {
+        display:none!important;
+    }
+
+    
+    /* Estadisticas  */
+    .estadisticasDesk {
+        padding-top: 20px;
+        background-color:#EA672A!important;
+        color:white;
+        height:150px;
+    }
+
+    .estadisticasDesk .cifra {
+        color:white;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+
+    .estadisticasMovil {
+        display:none!important;        
+    }
+
+    /* fin estadisticas */
+
+    /* te gustaria ser parte */
+    .teGustariaSerParte{
+        background-color:#282626;
+        height:250px;
+        text-align: center;
+    }
+
+    .teGustariaSerParte a {
+        text-decoration: none;
+        background-color:#8F0005;
+        border-radius:1.5em;
+        color:white;
+        width:50px;
+        padding:1%;
+    }
+
+    .tituloTeGustaria {
+        color:white;
+        font-size: 30px;       
+        padding-top:10px;
+    }
+    /* Fin te gustaria ser parte */
+
+    /* ver todos los programas */
+    .divBtnVer {
+        text-align: center;
+    }
+    /* ver todos los programas */
+
+
+
+    /* noticias */
+    .noticiasMovil {
+        display:none!important;  
+    }
+
+    .divNoticias {
+        background-color: brown;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 730px;
+    }
+    .imgNoticia {
+        margin-top: 10px;
+        width:100%;
+    }
+    
+    .tituloNoticias {
+        color:white;
+        font-size:32px;
+    }
+    
+    
+    .tituloNoticia {
+        color:white;
+        font-size:15px;        
+    }
+
+    .button-container{        
+        display:inline-block;
         position:relative;
     }
-}
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 600px) {
-   .nuestrosProgramas {
-        padding-top: 10px;
-        background-color: white;
-        height: 900px;
+    
+    
+    .button-container a{
+        position: absolute;
+        bottom:-1em;
+        right:90px;
+        background-color:#8F0005;
+        border-radius:1.5em;
+        color:white;
+        text-transform:uppercase;
+        padding:1em 1.5em;
+        text-decoration: none;
     }
+
+    .divBotonVerTodosNoticiasDesk {
+        display:block!important;
+    }
+
+    .botonVerTodasLasNoticiasDesk {
+        display:block!important;
+    }
+    /* noticias */
+
+
+
+    .tituloAlianzasMovil{
+        display:none!important;
+    }
+
+    .alianzasContenedorMovil {
+        display:none!important;
+    }
+
+    .btnVerTodasNoticiasMovil {
+        display:none!important;
+    }
+
+    .tituloAlianzasDesk {
+        display:block!important;    
+        height: 200px;    
+        background-color: #282626;
+    }
+
+    .spanTituloAlianzasDesk {        
+        font-size: 30px;
+        color:white;
+        font-weight: bold;
+        background-color: #282626;
+        margin-top: 20px;
+    }
+
+    .alianzasDesk {
+        height:300px;
+    }
+
+    .footer_csanta {
+        height: 300px; 
+        background-color:#EA672A;
+        color:white;
+    }
+
 }
+
 
 
 @media (max-width: 1200px) {
@@ -133,11 +330,6 @@ body{
 
 
  /* PROGRAMAS */
- .lamina-programa {
-    padding-top: 20px;
-    padding-right: 20px;
- }
-
 .tituloNuestrosProgramas {
    /* H2/BOLD */
    text-align: center;
@@ -151,10 +343,9 @@ body{
 
 }
 
-
-
-
 .lamina-programa {
+    padding-top: 20px;
+    padding-right: 20px;
     position: relative;
     display: inline-block;
     text-align: center;
@@ -168,6 +359,11 @@ body{
     color:white;
 }
 
+.laminaNoticia {
+    position: relative;
+    text-align: center;
+}
+
 .centradoVerical{
     position: absolute;
     top: 50%;
@@ -175,9 +371,6 @@ body{
     transform: translate(-50%, -50%);
     color:white;
 }
-
-
-
 
 .btnVerTodosLosProgramas {
     width: 200px;
@@ -244,23 +437,23 @@ body{
         max-width: 600px;
         width:70%;
         margin:auto;
-        /*background-color:#282626;*/
-        background-color: chartreuse!important; /*para test */
+        background-color:#282626;
+        /*background-color: chartreuse!important; para test */
     }
 
     .slideShowCasosExito {
         margin-top: 25px;
         height: auto;        
-        /*background-color:#282626;*/
-        background-color: darkgoldenrod; /*para test */
+        background-color:#282626;
+        /*background-color: darkgoldenrod; para test */
     }
 
     .slideCasoExito{
         margin-top: 30px;
         height: 350px;
         width: 80%;
-        /*background-color:#282626;*/
-        background-color: indigo; /*para test */
+        background-color:#282626;
+        /*background-color: indigo; para test */
     }
     
     .contenedor-laminas-casos-exito {
@@ -280,6 +473,7 @@ body{
     }
 
 
+    /* te gustaria ser parte */
     .teGustariaSerParte{
         background-color:#282626;
         height:250px;
@@ -300,13 +494,14 @@ body{
         font-size: 30px;       
         padding-top:10px;
     }
+    /* Fin te gustaria ser parte */
 
     .queHacemosMovil {
         display: none!important;
     }
 
     .divBtnVer {
-        text-align: right;
+        text-align: center;
     }
 
 
@@ -316,6 +511,7 @@ body{
     }
 
     .tituloAlianzasDesk {
+        background-color: #282626;
         display: block!important;
         color:white;
         padding-top: 20px;
@@ -421,10 +617,13 @@ body{
         font-weight: bold;
         text-align: center;
     }
+    
 
     .estadisticasMovil {
         display:none!important;        
     }
+
+    /* fin estadisticas */
 
     .menuHeaderMovil {
         display: none!important;
@@ -432,14 +631,27 @@ body{
     
 
     /* noticias */
+    /*
     .noticiasDesk {
         display:block!important;
+    }
+    */
+
+    .tituloNoticias {
+        color:black;
+        font-weight: bold;
+        font-size:32px;
     }
 
     .button-container-movil{        
         display:none;
     }
 
+
+    .btnVerTodasNoticiasMovil {
+        display:none!important;
+    }
+    
 
     .button-container{        
         display:inline-block;
@@ -483,6 +695,36 @@ body{
 
 /*  ajustes para moviles*/
 @media (max-width: 600px) {
+
+    .nuestrosProgramas {
+        padding-top: 10px;
+        background-color: white;
+        height: 900px;
+    }
+
+
+    .flexbox {
+        background-color:#282626;
+        height: 150px;
+        position:relative;
+    }
+
+
+    .casosDeExitoPpal {
+        background-color: #282626;
+        /*background-color: blue;*/
+        height: 500px;
+        position:relative;
+    }
+    
+         
+    
+    .alianzasMovilPpal {
+        background-color: #282626;
+        height: 500px;
+        position:relative;
+    }
+    
 
     .queHacemosDesk {
         display: none!important;
@@ -879,35 +1121,6 @@ body{
     #noticiasMovil {
         display:block;
     }
-    /*# noticias */
-
-    
-    /*
-    .nav-footer {
-        background-color: chartreuse;
-        margin-left: 0px;
-        text-align: left;
-    }
-    
-    .nav-footer ul {
-        text-align: left!important;
-        background-color: darkgreen;
-        list-style: none;
-        padding-left: 0px;
-    }
-    
-    .nav-footer ul li {
-      
-        background-color:#EA672A;
-    }
-
-    .nav-footer ul li a {
-        color:white;
-        text-align: left!important;
-        margin-left: 0px!important;
-    }
-*/
-
 }
 
 
@@ -935,163 +1148,6 @@ body{
 /* Fin Colores */
 
 
-
-/*
-.imgAlianzasMovil {
-    
-    background-color:#282626;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.contenedorImgAlianzaMovil{
-    margin-left: 5px;
-    padding-left: 8px;
-    background-color:#282626;
-}
-
-
-
-.divBtnEnviar {
-    text-align: right;
-}
-
-#btnEnviar {
-    background-color:#EA672A;
-}
-
-
-
-*/
-/* Menu Desk */
-/*
-.nav_header_wp {
-    float: center;
-    
-}
-
-.nav_header_wp li {
-    display: inline-block;
-    padding-left: 10px;
-
-}
-
-
-.nav_header_wp li a {
-    font-size: 15px;;
-    color:black;
-}
-*/
-/* Menu Desk */
-
-
-
-/* boton hamburguersa */
-/*
-.button-menu {
-    background-color: burlywood!important;
-}
-
-
-.main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    margin-left: -100%;
-    transition: all 0.2s linear;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .main-nav.show {
-    margin-left: 0;
-  }
-
-
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: 20;
-    height: 100vh;
-    width: 100%;
-    margin-left: -100%;
-    transition: all 0.2s linear;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-  }
-  
-  .main-nav.show {
-    margin-left: 20px;
-  }
-  
-  .link-item {
-    margin-top: 2rem;
-    color: #444444;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-  }
-  
-  .link-item::after {
-    position: absolute;
-    content: "";
-    background-color: black;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    transition: 0.3s ease all;
-  }
-  
-  .link-item:hover::after {
-    width: 100%;
-  }
-  
-  .button-menu {
-    z-index: 200;
-    width: 40px;
-    height: 40px;
-    border: none;
-    display: flex;
-    background: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .button-menu span {
-    width: 37px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #444444;
-    border-radius: 3px;
-    transform-origin: 4px 0px;
-    transition: all 0.2s linear;
-  }
-  
-  .button-menu.close span {
-    opacity: 1;
-    transform: rotate(45deg) translate(0px, 0px);
-    background: #ffffff;
-  }
-  
-  .button-menu.close span:nth-child(2) {
-    transform: rotate(-45deg) translate(-8px, 5px);
-  }
-  
-  .button-menu.close span:nth-child(3) {
-    display: none;
-  }
-  */
-
 .menu ul {
     
     list-style-type: none;
@@ -1116,10 +1172,11 @@ body{
 }
 
 
+/*
 .divNoticias {
     background-color: brown;
     padding-top: 10px;
-    padding-bottom: 10px;
+    height: 600px;
 }
 .imgNoticia {
     margin-top: 10px;
@@ -1135,7 +1192,10 @@ body{
 .tituloNoticia {
     color:white;
     font-size:15px;
+
+
 }
+*/
 
 
 
